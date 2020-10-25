@@ -7,9 +7,9 @@
 <p align="center">
  <a href=#sobre-o-projeto>Sobre</a> •
  <a href=#funcionalidades>Funcionalidades</a> •
-  <a href=#-descrição>Descriçãot</a> • 
- <a href=#tecnologias>Tecnologias Utilizadas</a>  • 
- <a href=#autora>Autora</a>
+  <a href=#-descrição>Descrição</a> • 
+ <a href=#Tecnologias Utilizadas>Tecnologias Utilizadas</a>  • 
+ <a href=#Autora>Autora</a>
 </p
 
 ---
