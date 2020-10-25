@@ -5,11 +5,11 @@
 </h4>
 
 <p align="center">
- <a href="#-sobre-o-projeto">Sobre</a> •
- <a href="#-funcionalidades">Funcionalidades</a> •
-  <a href="#-descrição">Descriçãot</a> • 
- <a href="#tecnologias">Tecnologias Utilizadas</a>  • 
- <a href="#-autor">Autora</a>
+ <a href=#sobre-o-projeto>Sobre</a> •
+ <a href=#funcionalidades>Funcionalidades</a> •
+  <a href=#-descrição>Descriçãot</a> • 
+ <a href=#tecnologias>Tecnologias Utilizadas</a>  • 
+ <a href=#autora>Autora</a>
 </p
 
 ---
@@ -23,27 +23,29 @@ Trata-se de uma experiência educacional desenvolvida no âmbito do curso Progra
 
 ## ⚙️ Funcionalidades
 
-  - [x] Calcula a tabela geral de classificação do Campeonato Brasileiro
-  - [x] Ordena a tabela por número de pontos, número de vitórias, saldo de gols
-  - [x] A tabela indica, para cada time:
-    - Quantidade de jogos
-    - Quantidade de pontos
-    - Numero de vitórias
-    - Número de empatess
-    - Número de derrotas
-    - Gols Feitos
-    - Gols Sofridos
-    - Saldo de Gols
-  - [x] Permite a visualização de jogos por rodada do Campeonato
-  - [x] Permite a atualização de resultados dos jogos, mediante autenticação de usuário
-  
+-   [x] Calcula a tabela geral de classificação do Campeonato Brasileiro
+-   [x] Ordena a tabela por número de pontos, número de vitórias, saldo de gols
+-   [x] A tabela indica, para cada time:
+    -   Quantidade de jogos
+    -   Quantidade de pontos
+    -   Numero de vitórias
+    -   Número de empatess
+    -   Número de derrotas
+    -   Gols Feitos
+    -   Gols Sofridos
+    -   Saldo de Gols
+-   [x] Permite a visualização de jogos por rodada do Campeonato
+-   [x] Permite a atualização de resultados dos jogos, mediante autenticação de usuário
+-   [x] Permite cadastrar um novo jogo
+-   [x] Permite deletar um jogo a partir do id
+
 ---
 
 ## 🚀 Descrição
 
 É um projeto de Back-End com integração a banco de dados.
 A pasta source (scr) recebe as funções controloladoras, que se dividem entre "jogos", onde está a lógica de montagem final das tabelas para a usuária; "helpers" que são controllers auxiliares
-que fazem os cálculos das tabelas; "auth", onde está a função de autenticação e "response" que formata as respostas do servidor. 
+que fazem os cálculos das tabelas; "auth", onde está a função de autenticação e "response" que formata as respostas do servidor.
 
 A pasta middleares contém um único arquivo, com a função responsável por fazer a checagem da sessão de usuário
 
@@ -52,37 +54,37 @@ Elas utilizam SQL.
 
 Utils guarda as informações de conexão com o banco de dados e criptografia de senha
 
-Os endpoints estão no arquivo "routes" e atualmente são quatro: GET para obter jogos, GET para ober tabelas, POST para autenticação; PUT para atualização de jogo
+Os endpoints estão no arquivo "routes" e atualmente são quatro: GET para obter jogos, GET para ober tabelas, POST para autenticação e cadastro de um novo jogo; PUT para atualização de jogo e Delete para remover um jogo do banco de datos.
 
-No arquivo .env-exemplo estão as variáveis de ambiente que podem ser configuradas: as informações de conexão com o banco de dados e o segredo do token de autenticação. 
+No arquivo .env-exemplo estão as variáveis de ambiente que podem ser configuradas: as informações de conexão com o banco de dados e o segredo do token de autenticação.
 
 O projeto foi escrito em JavaScript e rodado em node.
 
->> Próximos passos: Há outras funcionalidades a implementar como a possibilidade de cadastrar ou deletar jogos; cadastrar ou deletar novas usuárias, com níveis diferentes de permissões de acesso. 
+> > Próximos passos: Há outras funcionalidades a implementar como a possibilidade cadastrar ou deletar novas usuárias, com níveis diferentes de permissões de acesso.
 
 ---
 
 ## 🛠 Tecnologias Utilizadas
 
-- Node.js
-- Nodemon 
-- ESlint
-- Prettier 
-- Airbnb Base
-- Koa 
-- Koa-bodyparser
-- Koa-router
-- dotenv
-- bcrypt
-- jsonWebtoken
-- pg
+-   Node.js
+-   Nodemon
+-   ESlint
+-   Prettier
+-   Airbnb Base
+-   Koa
+-   Koa-bodyparser
+-   Koa-router
+-   dotenv
+-   bcrypt
+-   jsonWebtoken
+-   pg
 
-- SQL
-- BDeaver
-- Heroku
+-   SQL
+-   BDeaver
+-   Heroku
 
-- VSCode
-- Insominia
+-   VSCode
+-   Insominia
 
 ---
 
