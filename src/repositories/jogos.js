@@ -46,9 +46,56 @@ const atualizarJogo = async (jogo) => {
 
 	return result.rows.shift();
 };
+
+const inserirJogo = async (jogo) => {
+	const {
+		id,
+		time_casa,
+		time_visitante,
+		gols_casa,
+		gols_visitante,
+		rodada,
+	} = jogo;
+
+	const query = {
+		text: `INSERT INTO jogos (
+			id, time_casa, time_visitante, gols_casa, gols_visitante, rodada
+			) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`,
+		values: [
+			id,
+			time_casa,
+			time_visitante,
+			gols_casa,
+			gols_visitante,
+			rodada,
+		],
+	};
+
+	const result = await database.query(query);
+
+	return result.rows.shift();
+};
+
+const deletarJogo = async (jogo) => {
+	const { id = null } = jogo;
+	console.log(id);
+	if (!id) {
+		return null;
+	}
+	const query = {
+		text: `DELETE FROM jogos WHERE id = $1`,
+		values: [id],
+	};
+	const result = await database.query(query);
+	console.log(result);
+	return result.rows.shift();
+};
+
 module.exports = {
 	obterJogos,
 	obterJogosPorRodada,
 	obterJogoPorId,
 	atualizarJogo,
+	inserirJogo,
+	deletarJogo,
 };

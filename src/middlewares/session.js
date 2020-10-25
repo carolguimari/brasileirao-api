@@ -5,7 +5,9 @@ require('dotenv').config();
 
 const verificarSessao = async (ctx, next) => {
 	const token = ctx.headers.authorization.split(' ')[1];
-
+	if (!token) {
+		response(ctx, 403, { message: 'Ação proibida' });
+	}
 	try {
 		const checkToken = await jwt.verify(token, process.env.JWT_SECRET);
 		ctx.state.id = checkToken.id;

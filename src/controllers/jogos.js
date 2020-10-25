@@ -50,4 +50,49 @@ const editarJogo = async (ctx) => {
 	}
 };
 
-module.exports = { listarJogosPorRodada, obterClassificacao, editarJogo };
+const criarJogo = async (ctx) => {
+	const {
+		id = null,
+		time_casa = null,
+		time_visitante = null,
+		gols_casa = null,
+		gols_visitante = null,
+		rodada = null,
+	} = ctx.request.body;
+
+	const novoJogo = {
+		id,
+		time_casa,
+		time_visitante,
+		gols_casa,
+		gols_visitante,
+		rodada,
+	};
+
+	const result = await JogosDB.inserirJogo(novoJogo);
+	const jogos = await JogosDB.obterJogos();
+	if (jogos) {
+		// eslint-disable-next-line no-unused-vars
+		const tabela = await helpers.criarTabela(jogos);
+	}
+	response(ctx, 200, result);
+};
+
+const excluirJogo = async (ctx) => {
+	const { id = null } = ctx.request.body;
+	if (id) {
+		const jogo = await JogosDB.obterJogoPorId(id);
+		if (jogo) {
+			const result = await JogosDB.deletarJogo(jogo);
+			response(ctx, 200, result);
+		}
+	}
+};
+
+module.exports = {
+	listarJogosPorRodada,
+	obterClassificacao,
+	editarJogo,
+	criarJogo,
+	excluirJogo,
+};
